@@ -39,9 +39,13 @@ app.get("/api/player/:tag", async (req, res) => {
 
     if (!response.ok) {
       if (response.status === 403) {
-        return res.status(403).json({ error: "Invalid API token or insufficient permissions." });
+        return res
+          .status(403)
+          .json({ error: "Invalid API token or insufficient permissions." });
       } else if (response.status === 404) {
-        return res.status(404).json({ error: "Player not found. Please check the tag." });
+        return res
+          .status(404)
+          .json({ error: "Player not found. Please check the tag." });
       } else {
         return res.status(500).json({ error: "Failed to fetch player data." });
       }

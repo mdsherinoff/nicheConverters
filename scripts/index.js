@@ -36,7 +36,9 @@ document
         } else if (response.status === 403) {
           throw new Error("Access denied. Please check your API token.");
         } else {
-          throw new Error("Failed to fetch player data. Please try again later.");
+          throw new Error(
+            "Failed to fetch player data. Please try again later."
+          );
         }
       }
 
@@ -56,7 +58,6 @@ function displayPlayerDetails(playerData) {
   `;
 }
 
-// Clear button functionality
 document.getElementById("clearButton").addEventListener("click", () => {
   codeBox.value = "";
   detailsArea.innerHTML = "";
